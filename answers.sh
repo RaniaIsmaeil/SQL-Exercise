@@ -1,4 +1,4 @@
-Basic Queries
+Basic Queries:
 
 problem 1: Get all the names of students in the database
 answer: SELECT Name FROM students
@@ -51,3 +51,19 @@ UPDATE graduates
 SET Graduation = "08/09/2018"
 WHERE name="Layal"
 DELETE FROM students WHERE name = "Layal"
+
+
+
+Joins:
+
+1- SELECT employees.name, employees.Company, companies.Date
+   FROM employees INNER JOIN companies ON employees.Company = companies.name
+
+
+2- SELECT employees.Name FROM employees
+   WHERE employees.Company IN 
+   (SELECT companies.Name FROM companies WHERE date < 2000)
+
+3- SELECT employees.name , employees.Role, companies.name FROM employees
+   INNER JOIN companies ON employees.Company = companies.name
+   WHERE employees.Role="Graphic Designer"
