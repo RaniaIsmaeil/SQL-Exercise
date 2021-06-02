@@ -28,3 +28,26 @@ Problem 7: Decrease the points of Alex because he is late today.
 answer: UPDATE students
         SET Points = Points - 50
         WHERE name = "Alex"
+
+
+
+
+
+Creating Table:
+
+CREATE TABLE "graduates" (
+"ID" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+"Name" TEXT NOT Null UNIQUE,
+"Age" INTEGER,
+"Gender" TEXT,
+"Points" INTEGER,
+"Graduation" TEXT
+)
+
+INSERT INTO graduates(Id,Name,Age,Gender,Points)
+SELECT * FROM students
+WHERE name="Layal"
+UPDATE graduates
+SET Graduation = "08/09/2018"
+WHERE name="Layal"
+DELETE FROM students WHERE name = "Layal"
